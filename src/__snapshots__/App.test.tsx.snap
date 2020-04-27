@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> matches snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col"
+      >
+        <h1>
+          RNA to Protein converter
+        </h1>
+        <div
+          class="form-group"
+        >
+          <label
+            class=""
+          >
+            RNA codons
+          </label>
+          <div
+            class="input-group"
+          >
+            <input
+              class="form-control"
+              type="text"
+              value="AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"
+            />
+            <div
+              class="input-group-append"
+            >
+              <button
+                class="btn btn-secondary"
+              >
+                Translate
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="form-group"
+        >
+          <label
+            class=""
+          >
+            Protein
+          </label>
+          <input
+            class="form-control"
+            readonly=""
+            type="text"
+          />
+        </div>
+        <div
+          class="form-group"
+        >
+          <label
+            class=""
+          >
+            Requirements
+          </label>
+          <ul
+            class="list-group"
+          >
+            <li
+              class="list-group-item"
+            >
+              Must start with AUG codon.
+            </li>
+            <li
+              class="list-group-item"
+            >
+              Must end with one of UAA, UAG, or UGA codons.
+            </li>
+            <li
+              class="list-group-item"
+            >
+              UAA, UAG, and UGA codons must be at the end.
+            </li>
+            <li
+              class="list-group-item"
+            >
+              All codons are triplets.
+            </li>
+            <li
+              class="list-group-item"
+            >
+              Codons consist only of letters A, C, G, and U.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
