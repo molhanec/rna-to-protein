@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Container, Row, Col, FormGroup, Label, InputGroup, Input, InputGroupAddon, Button, ListGroup, ListGroupItem } from 'reactstrap'
+import { Container, Row, Col, FormGroup, Label, Input, ListGroup, ListGroupItem } from 'reactstrap'
 import RnaInput from './components/RnaInput'
+import ProteinResult from './components/ProteinResult'
 
 function App() {
 
@@ -13,13 +14,7 @@ function App() {
           <h1>RNA to Protein converter</h1>
 
           <RnaInput rna={rna} setRna={setRna} />
-
-          <FormGroup>
-            <Label>
-              Protein
-            </Label>
-            <Input readOnly />
-          </FormGroup>
+          <ProteinResult protein="" />
 
           <FormGroup>
             <Label>

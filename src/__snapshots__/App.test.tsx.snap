@@ -53,6 +53,7 @@ exports[`<App /> matches snapshot 1`] = `
             class="form-control"
             readonly=""
             type="text"
+            value=""
           />
         </div>
         <div
