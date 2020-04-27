@@ -18,8 +18,9 @@ const RnaInput = ({ onTranslate, invalid }: Props) => {
       <InputGroup>
         <Input
           value={rna}
-          onChange={event => setRna(event.target.value)}
           invalid={invalid}
+          onChange={event => setRna(event.target.value)}
+          onKeyPress={event => event.key === 'Enter' && onTranslate(rna)}
         />
         <InputGroupAddon addonType="append">
           <Button

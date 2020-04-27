@@ -10,7 +10,7 @@ describe('RNA to protein translation', () => {
 	})
 
 	it('should refuse string with invalid characters', () => {
-		expect(rnaToProtein('AUGXXX')).toStrictEqual({ kind: 'invalidCodon', codon: 'XXX' })
+		expect(rnaToProtein('AUGXXX')).toStrictEqual({ kind: 'invalidCodon' })
 	})
 
 	it('should refuse string not starting with AUG codon', () => {

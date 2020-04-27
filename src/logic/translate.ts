@@ -4,15 +4,10 @@ interface ValidProtein {
 }
 
 interface TranslationError {
-	kind: 'empty' | 'notTriplet' | 'invalidStart' | 'invalidStop' | 'stopInside'
+	kind: 'empty' | 'notTriplet' | 'invalidStart' | 'invalidStop' | 'stopInside' | 'invalidCodon'
 }
 
-interface InvalidCodon {
-	kind: 'invalidCodon'
-	codon: string
-}
-
-export type TranslationResult = ValidProtein | TranslationError | InvalidCodon
+export type TranslationResult = ValidProtein | TranslationError
 
 export const rnaToProtein = (rna: string): TranslationResult => {
 	if (rna.length === 0) return { kind: 'empty' }
@@ -28,7 +23,7 @@ export const rnaToProtein = (rna: string): TranslationResult => {
 			return { kind: 'valid', protein }
 		}
 		if (translationTable[codon]) protein += translationTable[codon]
-		else return { kind: 'invalidCodon', codon }
+		else return { kind: 'invalidCodon' }
 	}
 
 	return { kind: 'invalidStop' }
