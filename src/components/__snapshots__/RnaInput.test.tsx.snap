@@ -22,10 +22,16 @@ exports[`<RnaInput /> matches snapshot 1`] = `
         class="input-group-append"
       >
         <button
-          class="btn btn-secondary"
+          class="btn btn-primary"
           type="button"
         >
           Translate
+        </button>
+        <button
+          class="btn btn-secondary"
+          type="button"
+        >
+          Reset to example
         </button>
       </div>
     </div>

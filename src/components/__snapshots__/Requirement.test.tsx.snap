@@ -3,7 +3,7 @@
 exports[`<Requirement /> matches snapshot 1`] = `
 <div>
   <li
-    class="list-group-item-red list-group-item"
+    class="list-group-item-danger list-group-item"
   >
     Msg
   </li>
