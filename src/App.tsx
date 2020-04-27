@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { Container, Row, Col, FormGroup, Label, InputGroup, Input, InputGroupAddon, Button, ListGroup, ListGroupItem } from 'reactstrap'
 
 function App() {
+
+  const [rna, setRna] = useState("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <Row>
+        <Col>
+          <h1>RNA to Protein converter</h1>
+
+          <FormGroup>
+            <Label>
+              RNA codons
+            </Label>
+            <InputGroup>
+              <Input
+                value={rna}
+                onChange={event => setRna(event.target.value)}
+              />
+              <InputGroupAddon addonType="append">
+                <Button disabled={rna.trim() === ''}>Translate</Button>
+              </InputGroupAddon>
+            </InputGroup>
+          </FormGroup>
+
+          <FormGroup>
+            <Label>
+              Protein
+            </Label>
+            <Input readOnly />
+          </FormGroup>
+
+          <FormGroup>
+            <Label>
+              Requirements
+            </Label>
+            <ListGroup>
+              <ListGroupItem>AAAA</ListGroupItem>
+              <ListGroupItem>AAAA</ListGroupItem>
+              <ListGroupItem>AAAA</ListGroupItem>
+              <ListGroupItem>AAAA</ListGroupItem>
+            </ListGroup>
+          </FormGroup>
+
+        </Col>
+      </Row>
+    </Container>
+  )
 }
 
-export default App;
+export default App
