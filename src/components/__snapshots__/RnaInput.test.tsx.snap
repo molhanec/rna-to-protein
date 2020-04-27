@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RnaInput /> matches snapshot 1`] = `
+<div>
+  <div
+    class="form-group"
+  >
+    <label
+      class=""
+    >
+      RNA codons
+    </label>
+    <div
+      class="input-group"
+    >
+      <input
+        class="form-control"
+        type="text"
+        value="RNA"
+      />
+      <div
+        class="input-group-append"
+      >
+        <button
+          class="btn btn-secondary"
+        >
+          Translate
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Row, Col, FormGroup, Label, InputGroup, Input, InputGroupAddon, Button, ListGroup, ListGroupItem } from 'reactstrap'
+import RnaInput from './components/RnaInput'
 
 function App() {
 
@@ -11,20 +12,7 @@ function App() {
         <Col>
           <h1>RNA to Protein converter</h1>
 
-          <FormGroup>
-            <Label>
-              RNA codons
-            </Label>
-            <InputGroup>
-              <Input
-                value={rna}
-                onChange={event => setRna(event.target.value)}
-              />
-              <InputGroupAddon addonType="append">
-                <Button disabled={rna.trim() === ''}>Translate</Button>
-              </InputGroupAddon>
-            </InputGroup>
-          </FormGroup>
+          <RnaInput rna={rna} setRna={setRna} />
 
           <FormGroup>
             <Label>
