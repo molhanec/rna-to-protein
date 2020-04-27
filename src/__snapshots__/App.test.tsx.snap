@@ -80,7 +80,7 @@ exports[`<App /> matches snapshot 1`] = `
             <li
               class="list-group-item"
             >
-              UAA, UAG, and UGA codons must be at the end.
+              UAA, UAG, and UGA codons cannot be in the middle of RNA.
             </li>
             <li
               class="list-group-item"
