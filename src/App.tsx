@@ -23,7 +23,7 @@ function App() {
             <ListGroup>
               <ListGroupItem>Must start with AUG codon.</ListGroupItem>
               <ListGroupItem>Must end with one of UAA, UAG, or UGA codons.</ListGroupItem>
-              <ListGroupItem>UAA, UAG, and UGA codons must be at the end.</ListGroupItem>
+              <ListGroupItem>UAA, UAG, and UGA codons cannot be in the middle of RNA.</ListGroupItem>
               <ListGroupItem>All codons are triplets.</ListGroupItem>
               <ListGroupItem>Codons consist only of letters A, C, G, and U.</ListGroupItem>
             </ListGroup>
