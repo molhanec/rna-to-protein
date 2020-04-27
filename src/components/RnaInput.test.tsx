@@ -4,7 +4,7 @@ import RnaInput from './RnaInput'
 
 describe('<RnaInput />', () => {
   it('matches snapshot', () => {
-    const { container } = render(<RnaInput rna="RNA" setRna={() => { }} />)
+    const { container } = render(<RnaInput onTranslate={() => { }} />)
     expect(container).toMatchSnapshot()
   })
 })

@@ -16,13 +16,14 @@ exports[`<RnaInput /> matches snapshot 1`] = `
       <input
         class="form-control"
         type="text"
-        value="RNA"
+        value="AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"
       />
       <div
         class="input-group-append"
       >
         <button
           class="btn btn-secondary"
+          type="button"
         >
           Translate
         </button>
