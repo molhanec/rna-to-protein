@@ -3,9 +3,10 @@ import { FormGroup, Label, InputGroup, Input, InputGroupAddon, Button } from 're
 
 interface Props {
   onTranslate: (rna: string) => void
+  invalid: boolean
 }
 
-const RnaInput = ({ onTranslate }: Props) => {
+const RnaInput = ({ onTranslate, invalid }: Props) => {
 
   const [rna, setRna] = useState("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA")
 
@@ -18,6 +19,7 @@ const RnaInput = ({ onTranslate }: Props) => {
         <Input
           value={rna}
           onChange={event => setRna(event.target.value)}
+          invalid={invalid}
         />
         <InputGroupAddon addonType="append">
           <Button

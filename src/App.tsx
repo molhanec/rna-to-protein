@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { Container, Row, Col, FormGroup, Label, ListGroup, ListGroupItem } from 'reactstrap'
 import RnaInput from './components/RnaInput'
 import ProteinResult from './components/ProteinResult'
+import { rnaToProtein, TranslationResult } from "./logic/translate"
 
 function App() {
 
-  const [rna, setRna] = useState("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA")
+  const [translationResult, setTranslationResult] = useState<TranslationResult | undefined>(undefined)
 
   return (
     <Container>
@@ -13,8 +14,14 @@ function App() {
         <Col>
           <h1>RNA to Protein converter</h1>
 
-          <RnaInput rna={rna} setRna={setRna} />
-          <ProteinResult protein="" />
+          <RnaInput
+            onTranslate={rna => setTranslationResult(rnaToProtein(rna))}
+            invalid={!!(translationResult && translationResult.kind !== 'valid')}
+          />
+
+          <ProteinResult protein={
+            translationResult?.kind === 'valid' ? translationResult.protein : ''
+          } />
 
           <FormGroup>
             <Label>

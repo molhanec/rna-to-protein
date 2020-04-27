@@ -12,10 +12,9 @@ interface InvalidCodon {
 	codon: string
 }
 
-export type ConversionResult = ValidProtein | TranslationError | InvalidCodon
+export type TranslationResult = ValidProtein | TranslationError | InvalidCodon
 
-
-export const rnaToProtein = (rna: string): ConversionResult => {
+export const rnaToProtein = (rna: string): TranslationResult => {
 	if (rna.length === 0) return { kind: 'empty' }
 	if (rna.length % 3) return { kind: 'notTriplet' }
 
