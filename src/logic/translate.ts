@@ -1,3 +1,43 @@
+interface ValidProtein {
+	kind: 'valid'
+	protein: string
+}
+
+interface TranslationError {
+	kind: 'empty' | 'notTriplet' | 'invalidStart' | 'invalidStop' | 'stopInside'
+}
+
+interface InvalidCodon {
+	kind: 'invalidCodon'
+	codon: string
+}
+
+export type ConversionResult = ValidProtein | TranslationError | InvalidCodon
+
+
+export const rnaToProtein = (rna: string): ConversionResult => {
+	if (rna.length === 0) return { kind: 'empty' }
+	if (rna.length % 3) return { kind: 'notTriplet' }
+
+	if (rna.substring(0, 3) !== startCodon) return { kind: 'invalidStart' }
+
+	let protein = ''
+	for (let i = 0; i < rna.length; i += 3) {
+		const codon = rna.substring(i, i + 3)
+		if (stopCodons.includes(codon)) {
+			if (i !== rna.length - 3) return { kind: 'stopInside' }
+			return { kind: 'valid', protein }
+		}
+		if (translationTable[codon]) protein += translationTable[codon]
+		else return { kind: 'invalidCodon', codon }
+	}
+
+	return { kind: 'invalidStop' }
+}
+
+const startCodon = 'AUG'
+const stopCodons = [ 'UAA', 'UAG', 'UGA' ]
+
 const translationTable: { [key: string]: string } = {
 	UUU: 'F',
 	CUU: 'L',
@@ -60,27 +100,4 @@ const translationTable: { [key: string]: string } = {
 	CGG: 'R',
 	AGG: 'R',
 	GGG: 'G'
-}
-
-const startCodon = 'AUG'
-const stopCodons = [ 'UAA', 'UAG', 'UGA' ]
-
-export const rnaToProtein = (rna: string): string => {
-	if (rna.length === 0) throw new Error('Cannot convert empty string')
-	if (rna.length % 3) throw new Error('Input length must be divisible by 3')
-
-	if (rna.substring(0, 3) !== startCodon) throw new Error('Must start with AUG codon')
-
-	let protein = ''
-	for (let i = 0; i < rna.length; i += 3) {
-		const codon = rna.substring(i, i + 3)
-		if (stopCodons.includes(codon)) {
-			if (i !== rna.length - 3) throw new Error('Stop codon must be the last one')
-			return protein
-		}
-		if (translationTable[codon]) protein += translationTable[codon]
-		else throw new Error(`Invalid codon: ${codon}`)
-	}
-
-	throw new Error('No stop codon')
 }
