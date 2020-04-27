@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Row, Col, FormGroup, Label, Input, ListGroup, ListGroupItem } from 'reactstrap'
+import { Container, Row, Col, FormGroup, Label, ListGroup, ListGroupItem } from 'reactstrap'
 import RnaInput from './components/RnaInput'
 import ProteinResult from './components/ProteinResult'
 
