@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Requirement = ({ invalid, children }: Props) => (
-  <ListGroupItem color={invalid ? 'red' : ''} >
+  <ListGroupItem color={invalid ? 'danger' : ''} >
     {children}
   </ListGroupItem>
 )
