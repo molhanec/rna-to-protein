@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import RnaInput from './RnaInput'
+import Requirement from './Requirement'
 
-describe('<RnaInput />', () => {
+describe('<Requirement />', () => {
   it('matches snapshot', () => {
-    const { container } = render(<RnaInput invalid={true} onTranslate={() => { }} />)
+    const { container } = render(<Requirement invalid={true}>Msg</Requirement>)
     expect(container).toMatchSnapshot()
   })
 })

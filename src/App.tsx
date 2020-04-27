@@ -28,7 +28,7 @@ function App() {
               Requirements
             </Label>
             <ListGroup>
-              <ListGroupItem>Must start with AUG codon.</ListGroupItem>
+              <ListGroupItem color={translationResult?.kind === 'invalidStart' ? 'red' : ''} >Must start with AUG codon.</ListGroupItem>
               <ListGroupItem>Must end with one of UAA, UAG, or UGA codons.</ListGroupItem>
               <ListGroupItem>UAA, UAG, and UGA codons cannot be in the middle of RNA.</ListGroupItem>
               <ListGroupItem>All codons are triplets.</ListGroupItem>
