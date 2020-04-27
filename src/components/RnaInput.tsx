@@ -6,9 +6,11 @@ interface Props {
   invalid: boolean
 }
 
+const rnaExample = 'AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA'
+
 const RnaInput = ({ onTranslate, invalid }: Props) => {
 
-  const [rna, setRna] = useState("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA")
+  const [rna, setRna] = useState(rnaExample)
 
   return (
     <FormGroup>
@@ -24,10 +26,20 @@ const RnaInput = ({ onTranslate, invalid }: Props) => {
         />
         <InputGroupAddon addonType="append">
           <Button
+            color="primary"
             disabled={rna.trim() === ''}
             onClick={() => onTranslate(rna)}
           >
             Translate
+          </Button>
+          <Button
+            color="secondary"
+            onClick={() => {
+              setRna(rnaExample)
+              onTranslate(rnaExample)
+            }}
+          >
+            Reset to example
           </Button>
         </InputGroupAddon>
       </InputGroup>
